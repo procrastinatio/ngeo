@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{mobileCtrl.lang}}" ng-app="app" ng-controller="MobileController as mainCtrl">
+<html lang="{{mainCtrl.lang}}" ng-app="app" ng-controller="MobileController as mainCtrl">
   <head>
     <title>{{'Mobile Application'|translate}}</title>
     <meta charset="utf-8">
@@ -7,6 +7,14 @@
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" href="image/favicon.ico"/>
     <link rel="stylesheet" href="../../build/mobile.css">
+    <script>
+      if (!window.requestAnimationFrame) {
+        alert('Your browser is not supported, please update it or use another one. You will be redirected.\n\n'
+            + 'Votre navigateur n\'est pas supporté, veuillez le mettre à jour ou en utiliser un autre. Vous allez être redirigé.\n\n'
+            + 'Ihr Browser wird nicht unterstützt, bitte aktualisieren Sie ihn oder verwenden Sie einen anderen. Sie werden weitergeleitet.');
+        window.location = 'http://geomapfish.org/'
+      }
+    </script>
   </head>
   <body ng-class="{'gmf-mobile-nav-is-visible': mainCtrl.navIsVisible(),
                    'gmf-mobile-nav-left-is-visible': mainCtrl.leftNavIsVisible(),
@@ -148,7 +156,7 @@
     <script src="../../../../lib/watchwatchers.js"></script>
     <script>
       (function() {
-        var cacheVersion = '9c0d7d0cc23cff90500b4007679cc81f1ec7d00b';
+        var cacheVersion = '6cd5ec69f1671754c30f5d32aa0a5e8f9d37be4b';
         var urlElements = window.location.pathname.split('/');
 
         var angularLocaleScriptUrlElements = urlElements.slice(0, urlElements.length - 3);
