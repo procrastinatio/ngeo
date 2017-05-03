@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../../lib/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../../lib/jquery-ui.min.css">
     <style>
+      #message {
+        width: 300px;
+      }
       .ngeo-colorpicker-palette {
         border-collapse: separate;
         border-spacing: 0;
@@ -160,11 +163,13 @@
         gmf-search-input-value="ctrl.inputValue"
         gmf-search-colorchooser="true"
         gmf-search-placeholder="Search for « Laus » for example…"
-        gmf-search-clearbutton="true">
+        gmf-search-clearbutton="true"
+        gmf-search-on-init="ctrl.searchIsReady()">
       </gmf-search>
       <p id="desc">This example shows how to use the <code>gmf-search</code> directive, which
       is based on Twitter's <code>typeahead</code> component.</p>
       <p>You typed: {{ctrl.inputValue}}</p>
+      <div id="message"></div>
     </div>
     <script src="../../lib/jquery.min.js"></script>
     <script src="../../lib/jquery-ui.min.js"></script>
