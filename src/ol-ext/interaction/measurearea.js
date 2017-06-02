@@ -73,7 +73,7 @@ ngeo.interaction.MeasureArea.prototype.handleMeasure = function(callback) {
   const geom = /** @type {ol.geom.Polygon} */
       (this.sketchFeature.getGeometry());
   const proj = this.getMap().getView().getProjection();
-  const dec = this.decimals;
+  const dec = this.precision;
   const output = ngeo.interaction.Measure.getFormattedArea(geom, proj, dec, this.format);
   const verticesCount = geom.getCoordinates()[0].length;
   let coord = null;
